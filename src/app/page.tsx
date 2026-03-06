@@ -1,11 +1,13 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import TanksTable from "../features/tanks/components/TanksTable";
+import { getTanks } from "../api/tanks/tanks.api";
+import TanksPage from "../features/tanks/components/TanksPage/TanksPage";
 
-export default function Home() {
+export default async function Home() {
+  const tanks = await getTanks();
+
   return (
     <div className={styles.page}>
-      <TanksTable />
+      <TanksPage tanks={tanks} />
     </div>
   );
 }

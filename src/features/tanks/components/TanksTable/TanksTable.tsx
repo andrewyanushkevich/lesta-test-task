@@ -1,13 +1,14 @@
-import { getTanks } from "@/src/api/tanks/tanks.api";
 import styles from "./TanksTable.module.css";
 import Image from "next/image";
+import { FC } from "react";
+import { Tank } from "@/src/api/tanks/tanks.types";
 
-const TanksTable = async () => {
-  const tanks = await getTanks();
+interface TanksTableProps {
+  tanks: Tank[];
+}
 
-  console.log("tanks", tanks);
-
-  const paginatedItems = tanks.slice(0, 10);
+const TanksTable: FC<TanksTableProps> = (props) => {
+  const { tanks } = props;
 
   return (
     <div className={styles["tank-table-container"]}>
@@ -29,7 +30,7 @@ const TanksTable = async () => {
           </tr>
         </thead>
         <tbody>
-          {paginatedItems.map((tank) => (
+          {tanks.map((tank) => (
             <tr key={tank.tank_id} className={styles["tank-table__row"]}>
               <td className={styles["tank-table__td"]}>
                 <div className={styles["tank-info"]}>
