@@ -14,8 +14,4 @@ export interface Tank {
   nation: string;
   type: string;
   short_name: string;
-  is_premium: boolean;
-  is_event: boolean;
-  is_hidden: boolean;
-  is_disabled: boolean;
 }
