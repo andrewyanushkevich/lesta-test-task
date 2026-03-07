@@ -87,3 +87,21 @@
   color: var(--color-accent);
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .controls-bar {
+    flex-direction: column;
+  }
+
+  .controls-bar__search-group {
+    flex-direction: column;
+    align-items: normal;
+    width: 100%;
+  }
+
+  .controls-bar__settings {
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+  }
+}
