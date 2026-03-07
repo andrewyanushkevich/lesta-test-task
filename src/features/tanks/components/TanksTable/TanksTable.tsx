@@ -3,10 +3,19 @@ import Image from "next/image";
 import { FC } from "react";
 import { Tank } from "@/src/api/tanks/tanks.types";
 
+/**
+ * Props for the `TanksTable` component.
+ */
 interface TanksTableProps {
+  /**
+   * List of tanks to render in the table.
+   */
   tanks: Tank[];
 }
 
+/**
+ * Displays a tabular view of tanks with image, description and key stats.
+ */
 const TanksTable: FC<TanksTableProps> = (props) => {
   const { tanks } = props;
 

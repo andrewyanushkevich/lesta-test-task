@@ -50,3 +50,12 @@
   color: white;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .pagination {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+}

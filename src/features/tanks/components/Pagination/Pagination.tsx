@@ -3,13 +3,28 @@ import { Dispatch, FC, SetStateAction } from "react";
 import styles from "./Pagination.module.css";
 import { getPageNumbers } from "@/src/features/tanks/utils/utils";
 
+/**
+ * Props for the `Pagination` component.
+ */
 interface PaginationProps {
+  /**
+   * Currently selected page (1-based index).
+   */
   currentPage: number;
+  /**
+   * Total number of available pages.
+   */
   totalPages: number;
+  /**
+   * Setter that updates the current page, accepting either a number
+   * or a functional updater.
+   */
   setCurrentPage: Dispatch<SetStateAction<number>>;
 }
 
-
+/**
+ * Renders pagination controls for navigating between pages of tanks.
+ */
 const Pagination: FC<PaginationProps> = (props) => {
   const { currentPage, totalPages, setCurrentPage } = props;
 

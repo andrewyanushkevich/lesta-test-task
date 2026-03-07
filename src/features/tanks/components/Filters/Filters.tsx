@@ -3,17 +3,47 @@ import styles from "./Filters.module.css";
 import { Dispatch, FC, SetStateAction } from "react";
 import { Tank } from "@/src/api/tanks/tanks.types";
 
+/**
+ * Props for the `Filters` component.
+ */
 interface FiltersProps {
+  /**
+   * Number of rows to display per page.
+   */
   itemsPerPage: number;
+  /**
+   * Setter for the number of rows per page.
+   */
   setItemsPerPage: Dispatch<SetStateAction<number>>;
+  /**
+   * Current client-side search query.
+   */
   search: string;
+  /**
+   * Updates the client-side search query.
+   */
   setSearch: (search: string) => void;
+  /**
+   * Current exact-name API search query.
+   */
   apiSearch: string;
+  /**
+   * Setter for the exact-name API search query.
+   */
   setApiSearch: Dispatch<SetStateAction<string>>;
+  /**
+   * Tanks after applying the client-side filter.
+   */
   filteredTanks: Tank[];
+  /**
+   * Handler for submitting the exact-name API search form.
+   */
   handleApiSearch: (e: React.SubmitEvent) => void;
 }
 
+/**
+ * Filters and controls bar for searching tanks and adjusting pagination size.
+ */
 const Filters: FC<FiltersProps> = (props) => {
   const {
     itemsPerPage,

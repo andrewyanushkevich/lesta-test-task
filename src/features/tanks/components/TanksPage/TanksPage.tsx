@@ -7,10 +7,20 @@ import { Tank } from "@/src/api/tanks/tanks.types";
 import Filters from "../Filters";
 import { normalizeString } from "@/src/features/tanks/utils/utils";
 
+/**
+ * Props for the `TanksPage` component.
+ */
 interface TanksPageProps {
+  /**
+   * Full list of tanks loaded from the API.
+   */
   tanks: Tank[];
 }
 
+/**
+ * Client-side page that wires filters, table and pagination
+ * together to browse and search the tanks list.
+ */
 const TanksPage: FC<TanksPageProps> = (props) => {
   const { tanks } = props;
   const [currentPage, setCurrentPage] = useState(1);
